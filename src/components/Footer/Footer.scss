@@ -1,0 +1,99 @@
+
+.footer {
+    position: relative;
+    color: white;
+    padding-top: 7rem;
+    padding-bottom: 0.5rem;
+  
+    &-bg-desktop {
+      display: none;
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      
+      @media (min-width: 768px) {
+        display: block;
+      }
+    }
+  
+    &-bg-mobile {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      
+      @media (min-width: 768px) {
+        display: none;
+      }
+    }
+  
+    &-content {
+      position: relative;
+      max-width: 80rem; // 7xl in Tailwind
+      margin: 0 auto;
+      padding: 0 1rem;
+      padding-top: 10rem;
+    }
+  
+    &-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      
+      @media (min-width: 768px) {
+        grid-template-columns: 1fr 2fr;
+      }
+    }
+  
+    &-logo {
+      .logo-text {
+        font-size: 1.875rem; // text-3xl
+        font-weight: 700;
+        display: block;
+        margin-bottom: 1rem;
+        margin-left: 1rem;
+        color: white;
+        text-decoration: none;
+      }
+    }
+  
+    &-links {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+  
+      &-column {
+        ul {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+          
+          li {
+            a {
+              color: white;
+              text-decoration: none;
+              
+              &:hover {
+                color: #d1d5db; // gray-300 in Tailwind
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    &-copyright {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.2); // white-800 equivalent
+      text-align: center;
+      font-size: 0.875rem;
+    }
+  }

@@ -1,0 +1,110 @@
+.testimonials-section {
+    padding: 5rem 1rem;
+    background-color: white;
+  }
+  
+  .testimonials-container {
+    max-width: 80rem; // max-w-7xl
+    margin: 0 auto;
+  }
+  
+  .testimonials-title {
+    font-size: 1.875rem; // text-3xl
+    font-weight: 700; // font-bold
+    text-align: center;
+    margin-bottom: 3rem; // mb-12
+  }
+  
+  .testimonials-carousel {
+    position: relative;
+  }
+  
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    overflow: hidden;
+    
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .testimonial-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+  
+  .testimonial-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .testimonial-image {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 9999px;
+    margin-right: 1rem;
+  }
+  
+  .testimonial-person {
+    // Person details container
+  }
+  
+  .testimonial-name {
+    font-weight: 600;
+  }
+  
+  .testimonial-role {
+    font-size: 0.875rem;
+    color: #4b5563; // text-gray-600
+  }
+  
+  .testimonial-rating {
+    display: flex;
+    margin-bottom: 1rem;
+  }
+  
+  .testimonial-star {
+    height: 1.25rem;
+    width: 1.25rem;
+    color: #facc15; // text-yellow-400
+    fill: currentColor;
+  }
+  
+  .testimonial-content {
+    color: #374151; // text-gray-700
+  }
+  
+  .testimonials-nav-button {
+    position: absolute;
+    top: 50%;
+    background-color: white;
+    padding: 0.5rem;
+    border-radius: 9999px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transform: translateY(-50%);
+    
+    &:hover {
+      background-color: #f3f4f6; // hover:bg-gray-100
+    }
+  }
+  
+  .testimonials-prev-button {
+    left: 0;
+    transform: translate(-1rem, -50%);
+  }
+  
+  .testimonials-next-button {
+    right: 0;
+    transform: translate(1rem, -50%);
+  }
+  
+  .testimonials-nav-icon {
+    height: 1.5rem;
+    width: 1.5rem;
+    color: #4b5563; // text-gray-600
+  }

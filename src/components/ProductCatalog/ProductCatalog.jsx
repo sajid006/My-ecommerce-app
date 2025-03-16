@@ -1,4 +1,5 @@
 import React from 'react';
+import './ProductCatalog.scss';
 
 const ProductCatalog = () => {
   const categories = [
@@ -25,22 +26,22 @@ const ProductCatalog = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-gray-50">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-12">Explore Our Diverse Product Catalog</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <section className="product-catalog">
+      <div className="product-catalog-container">
+        <h2 className="product-catalog-title">Explore Our Diverse Product Catalog</h2>
+        <div className="product-catalog-grid">
           {categories.map((category, index) => (
-            <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer">
-              <div className="relative h-64">
+            <div key={index} className="product-category">
+              <div className="product-category-image-container">
                 <img
                   src={category.image}
                   alt={category.name}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  className="product-category-image"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent">
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <h3 className="text-xl font-semibold mb-1">{category.name}</h3>
-                    <p className="text-sm opacity-90">{category.items}</p>
+                <div className="product-category-overlay">
+                  <div className="product-category-content">
+                    <h3 className="product-category-name">{category.name}</h3>
+                    <p className="product-category-items">{category.items}</p>
                   </div>
                 </div>
               </div>

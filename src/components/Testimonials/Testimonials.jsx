@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
+import './Testimonials.scss';
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -80,47 +81,47 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-20 px-4 bg-white">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-12">What Our Customers Have to Say</h2>
+    <section className="testimonials-section">
+      <div className="testimonials-container">
+        <h2 className="testimonials-title">What Our Customers Have to Say</h2>
         
-        <div className="relative">
+        <div className="testimonials-carousel">
           <button 
             onClick={prevTestimonial}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white p-2 rounded-full shadow-lg hover:bg-gray-100"
+            className="testimonials-nav-button testimonials-prev-button"
           >
-            <ChevronLeft className="h-6 w-6 text-gray-600" />
+            <ChevronLeft className="testimonials-nav-icon" />
           </button>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 overflow-hidden">
+          <div className="testimonials-grid">
             {testimonials.slice(currentIndex, currentIndex + 3).map((testimonial, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-lg">
-                <div className="flex items-center mb-4">
+              <div key={index} className="testimonial-card">
+                <div className="testimonial-header">
                   <img
                     src={testimonial.image}
                     alt={testimonial.name}
-                    className="w-12 h-12 rounded-full mr-4"
+                    className="testimonial-image"
                   />
-                  <div>
-                    <h3 className="font-semibold">{testimonial.name}</h3>
-                    <p className="text-gray-600 text-sm">{testimonial.role}</p>
+                  <div className="testimonial-person">
+                    <h3 className="testimonial-name">{testimonial.name}</h3>
+                    <p className="testimonial-role">{testimonial.role}</p>
                   </div>
                 </div>
-                <div className="flex mb-4">
+                <div className="testimonial-rating">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                    <Star key={i} className="testimonial-star" />
                   ))}
                 </div>
-                <p className="text-gray-700">{testimonial.content}</p>
+                <p className="testimonial-content">{testimonial.content}</p>
               </div>
             ))}
           </div>
 
           <button 
             onClick={nextTestimonial}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white p-2 rounded-full shadow-lg hover:bg-gray-100"
+            className="testimonials-nav-button testimonials-next-button"
           >
-            <ChevronRight className="h-6 w-6 text-gray-600" />
+            <ChevronRight className="testimonials-nav-icon" />
           </button>
         </div>
       </div>
